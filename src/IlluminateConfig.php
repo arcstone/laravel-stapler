@@ -14,7 +14,7 @@ class IlluminateConfig implements ConfigurableInterface
 
     /**
      * The name of the package this driver is being used with.
-     * 
+     *
      * @var string
      */
     protected $packageName;
@@ -46,7 +46,7 @@ class IlluminateConfig implements ConfigurableInterface
      * @param $name
      * @return mixed
      */
-    public function get($name) 
+    public function get($name, $default = null)
     {
         $item = $this->getItemPath($name);
 
@@ -60,7 +60,7 @@ class IlluminateConfig implements ConfigurableInterface
      * @param $value
      * @return mixed
      */
-    public function set($name, $value) 
+    public function set($name, $value)
     {
         $item = $this->getItemPath($name);
 
@@ -71,7 +71,7 @@ class IlluminateConfig implements ConfigurableInterface
      * Return the path to an item so that it can be loaded via config.
      * We need to append the package name to the item separated
      * with '::' for L4 and '.' for L5.
-     * 
+     *
      * @param  string $item
      * @return string
      */
